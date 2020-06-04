@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="codigo.js"></script>
+  <script type="text/javascript" src="filas.js"></script>
+  <script type="text/javascript" src="tabla.json"></script>
+  <link rel="stylesheet" href="estiloap.css">
+<body>
+
+<h1 id="cabeza">ap Sport channel</h1>
+<div id="botonesBar">
+  <button onclick="test()"> TEST</button>
+  <button onclick="rellenaFila()"> Incluye Apuesta</button>
+  <button onclick="creaEstadisticasGlobales()"> Stats Global</button>
+  <button onclick="creaEstadisticas(0)"> Stats Persona</button>
+  <button onclick="creaEstadisticas(1)"> Stats Deporte</button>
+  <button onclick="subirServidor()">UPLOAD</button>
+</div>
+<div id="divFormulario">
+      <form id="formulario">
+       Apostante: <select id="person" name="apostante">
+          <!--        <option value="merino">Merino</option>
+                  <option value="pepu">Pepu</option>
+                  <option value="aitor">Aitor</option>
+                  <option value="tury">Turienzo</option>    -->
+                </select><br>
+       Pasta: <input type="text" name="pasta" value=32><br>
+       Deporte: <select id="sport" name="deporte">
+            <!--      <option value="futbol">furbol</option>
+                  <option value="baloncesto">basket</option>
+                  <option value="tenis">tenis</option>
+                  <option value="golf">golf</option>
+                  <option value="otro">otro</option>        -->
+                </select><br>
+       Descripcion apuesta: <input type="text" name="descripcion"><br>
+       Fecha evento: <input type="date" id="start" name="fechaEvento" value="2019-11-11" min="2000-11-01" max="2030-12-31"><br>
+       Cuota: <input type="text" name="cuota" value=1.04><br>
+       Resultado:   <input type="radio" name="resultado" value="waiting" checked="checked">Waiting<input type="radio" name="resultado" value="ganada">WIN<input type="radio" name="resultado" value="perdida">LOSS<br>
+      <!--input type="submit" onclick="rellenaFila()" value="Submit"><br-->
+      </form>
+</div>
+
+<div id="divEstadisticas">
+    <h2>Estadisticas generales</h2>
+    <ul style="font-size:x-large">
+        <li>BALANCE TOTAL &emsp;<span id="balanceTotal" class="visor">+45</span></li>
+        <li>Dinero Jugado &emsp;<span id="dineroJugado" class="visor">120</span></li>
+        <li>ap totales &emsp;<span id="apTotales" class="visor">54</span></li>
+        <li>ap ganadas &emsp;<span id="apGanadas" class="visor">23</span></li>
+        <li>ap en juego &emsp;<span id="apJuego" class="visor">+45</span></li>
+    </ul>
+</div>
+
+<div class="divTabla">
+    <table border="1"  id="tabla">    <!--style="width:100%"-->
+     <tr>
+       <th>Apostante</th><th>Pasta</th><th>Deporte</th><th>Descripcion</th><th>Fecha</th><th>Cuota</th><th>Resultado</th><th>Editar/Borrar</th><th>Balance</th>
+     </tr>
+    </table>
+</div>
+
+<div class="divTabla">
+    <table border="1"  id="tablaStatsPersonas">
+     <tr> <th>Apostante</th> </tr>
+     <tr> <th>Balance</th> </tr>
+     <tr> <th>Dinero jugado</th> </tr>
+     <tr> <th>ap balance</th> </tr>
+     <tr> <th>Deporte favorito</th> </tr>
+    </table>
+</div>
+
+<div class="divTabla">
+    <table border="1"  id="tablaStatsDeporte">
+       <tr> <th>Deporte</th> </tr>
+       <tr> <th>Balance</th> </tr>
+       <tr> <th>Dinero jugado</th> </tr>
+       <tr> <th>ap balance</th> </tr>
+       <tr> <th>Jugador Mejor Balance</th> </tr>
+       <tr> <th>Jugador Peor Balance</th> </tr>
+       <tr> <th>Jugador Mejor ap</th> </tr>
+       <tr> <th>Jugador Peor ap</th> </tr>
+    </table>
+</div>
+
+
+
+</body>
+</html>
